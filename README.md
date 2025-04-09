@@ -3,7 +3,7 @@
 ```markdown
 🍽️ Kalori Tracker Harian
 
-Aplikasi desktop sederhana berbasis **Java Swing** untuk mencatat dan memantau kalori harian dari makanan yang dikonsumsi. Cocok untuk tugas UTS Java Components atau penggunaan pribadi.
+Aplikasi desktop sederhana berbasis Java Swing untuk mencatat dan memantau kalori harian dari makanan yang dikonsumsi. Cocok untuk tugas UTS Java Components atau penggunaan pribadi.
 
 🛠️ Fitur Utama
 
