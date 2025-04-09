@@ -92,29 +92,29 @@ new String[]{"", "Nasi - 200", "Ayam - 250", "Teh Manis - 100"}
 ✅ Interface (Layanan yang Disediakan)
 
 IDataSaver
-
 Menyediakan layanan untuk menyimpan dan memuat data makanan ke/dari file (CSV).
-
 ITableManager	
-
 Menyediakan layanan untuk mengakses atau mengatur isi tabel dari luar komponen tabel (misalnya menampilkan data awal atau memanipulasi data dari luar TablePanel).
-
 IPresetProvider
-
 Menyediakan layanan untuk mengambil daftar preset makanan (misalnya nasi, ayam, teh).
-
 ITableUpdater 
-
 Menyediakan layanan untuk memperbarui tabel tampilan kalori.
 
 🧩 Kelas (Pengguna dan Penyedia Layanan)
+
 KaloriTracker
- Komponen utama (JFrame)
- 🔁 Memerlukan:
- IDataSaver → untuk menyimpan/memuat data makanan
- IPresetProvider → untuk mendapatkan daftar preset makanan
- ITableManager → untuk mengatur data tabel dari luar komponen
- ITableUpdater → (opsional, jika langsung memperbarui tampilan tabel)
+
+Komponen utama (JFrame)
+
+🔁 Memerlukan:
+
+IDataSaver → untuk menyimpan/memuat data makanan
+
+IPresetProvider → untuk mendapatkan daftar preset makanan
+
+ITableManager → untuk mengatur data tabel dari luar komponen
+
+ITableUpdater → (opsional, jika langsung memperbarui tampilan tabel)
 
 InputPanel
  Panel untuk input makanan dari pengguna
