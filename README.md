@@ -81,10 +81,9 @@ new String[]{"", "Nasi - 200", "Ayam - 250", "Teh Manis - 100"}
 
 ---
 
-## ✏ScreenShot
+## ScreenShot
 
-![image](https://github.com/user-attachments/assets/cf74ddea-d285-4991-98bb-34a30ba6cf14)
-
+![Screenshot 2025-04-09 094705](https://github.com/user-attachments/assets/72c8af3c-f925-40f8-8f72-647a832734a9)
 
 ## 🧑‍💻 Author
 
