@@ -90,43 +90,51 @@ new String[]{"", "Nasi - 200", "Ayam - 250", "Teh Manis - 100"}
 ## 🧱 Arsitektur Sistem
 
 ✅ Interface (Layanan yang Disediakan)
+
 IDataSaver
+
 Menyediakan layanan untuk menyimpan dan memuat data makanan ke/dari file (CSV).
+
 ITableManager	
+
 Menyediakan layanan untuk mengakses atau mengatur isi tabel dari luar komponen tabel (misalnya menampilkan data awal atau memanipulasi data dari luar TablePanel).
+
 IPresetProvider
+
 Menyediakan layanan untuk mengambil daftar preset makanan (misalnya nasi, ayam, teh).
+
 ITableUpdater 
+
 Menyediakan layanan untuk memperbarui tabel tampilan kalori.
 
 🧩 Kelas (Pengguna dan Penyedia Layanan)
 KaloriTracker
-Komponen utama (JFrame)
-🔁 Memerlukan:
-IDataSaver → untuk menyimpan/memuat data makanan
-IPresetProvider → untuk mendapatkan daftar preset makanan
-ITableManager → untuk mengatur data tabel dari luar komponen
-ITableUpdater → (opsional, jika langsung memperbarui tampilan tabel)
+ Komponen utama (JFrame)
+ 🔁 Memerlukan:
+ IDataSaver → untuk menyimpan/memuat data makanan
+ IPresetProvider → untuk mendapatkan daftar preset makanan
+ ITableManager → untuk mengatur data tabel dari luar komponen
+ ITableUpdater → (opsional, jika langsung memperbarui tampilan tabel)
 
 InputPanel
-Panel untuk input makanan dari pengguna
-🔁 Memerlukan:
-IPresetProvider → untuk menampilkan pilihan makanan preset
-ITableUpdater → untuk memperbarui tabel setelah input makanan
+ Panel untuk input makanan dari pengguna
+ 🔁 Memerlukan:
+ IPresetProvider → untuk menampilkan pilihan makanan preset
+ ITableUpdater → untuk memperbarui tabel setelah input makanan
 
 TablePanel
-Menampilkan tabel data makanan & kalori
-✅ Menyediakan:
-ITableUpdater → menyediakan layanan update tampilan
-ITableManager → menyediakan layanan untuk mengatur/memanipulasi tabel dari luar
+ Menampilkan tabel data makanan & kalori
+ ✅ Menyediakan:
+ ITableUpdater → menyediakan layanan update tampilan
+ ITableManager → menyediakan layanan untuk mengatur/memanipulasi tabel dari luar
 
 FileService
-✅ Mengimplementasikan:
-IDataSaver → menyimpan dan memuat data dari/ke file CSV
+ ✅ Mengimplementasikan:
+ IDataSaver → menyimpan dan memuat data dari/ke file CSV
 
 PresetService
-✅ Mengimplementasikan:
-IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
+ ✅ Mengimplementasikan:
+ IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
 
 ---
 
