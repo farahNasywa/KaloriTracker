@@ -161,6 +161,8 @@ IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
 
 ## 📃 UML Class Diagram
 
+![joki-class diagram drawio](https://github.com/user-attachments/assets/1bbb4018-7693-4892-afef-571f9ca5e6ec)
+
 ---
 
 ## 🧑‍💻 Author
