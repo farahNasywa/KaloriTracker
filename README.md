@@ -85,6 +85,61 @@ new String[]{"", "Nasi - 200", "Ayam - 250", "Teh Manis - 100"}
 
 ![Screenshot 2025-04-09 094705](https://github.com/user-attachments/assets/72c8af3c-f925-40f8-8f72-647a832734a9)
 
+---
+
+## 🧱 Arsitektur Sistem
+
+✅ Interface (Layanan yang Disediakan)
+IDataSaver
+Menyediakan layanan untuk menyimpan dan memuat data makanan ke/dari file (CSV).
+ITableManager	
+Menyediakan layanan untuk mengakses atau mengatur isi tabel dari luar komponen tabel (misalnya menampilkan data awal atau memanipulasi data dari luar TablePanel).
+IPresetProvider
+Menyediakan layanan untuk mengambil daftar preset makanan (misalnya nasi, ayam, teh).
+ITableUpdater 
+Menyediakan layanan untuk memperbarui tabel tampilan kalori.
+
+🧩 Kelas (Pengguna dan Penyedia Layanan)
+KaloriTracker
+Komponen utama (JFrame)
+🔁 Memerlukan:
+IDataSaver → untuk menyimpan/memuat data makanan
+IPresetProvider → untuk mendapatkan daftar preset makanan
+ITableManager → untuk mengatur data tabel dari luar komponen
+ITableUpdater → (opsional, jika langsung memperbarui tampilan tabel)
+
+InputPanel
+Panel untuk input makanan dari pengguna
+🔁 Memerlukan:
+IPresetProvider → untuk menampilkan pilihan makanan preset
+ITableUpdater → untuk memperbarui tabel setelah input makanan
+
+TablePanel
+Menampilkan tabel data makanan & kalori
+✅ Menyediakan:
+ITableUpdater → menyediakan layanan update tampilan
+ITableManager → menyediakan layanan untuk mengatur/memanipulasi tabel dari luar
+
+FileService
+✅ Mengimplementasikan:
+IDataSaver → menyimpan dan memuat data dari/ke file CSV
+
+PresetService
+✅ Mengimplementasikan:
+IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
+
+---
+
+## 🛗 Provide dan Require Interface 
+
+![image](https://github.com/user-attachments/assets/928d9e78-dd75-49ab-8202-8a045ad10a53)
+
+---
+
+## 📃 UML Class Diagram
+
+---
+
 ## 🧑‍💻 Author
 
 - Nama: [Farah Nasywa & Siska Auliani]
