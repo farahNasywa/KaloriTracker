@@ -1,26 +1,29 @@
-# KaloriTracker
-
-```markdown
-🍽️ Kalori Tracker Harian
-
-Aplikasi desktop sederhana berbasis Java Swing untuk mencatat dan memantau kalori harian dari makanan yang dikonsumsi.
-
-🛠️ Fitur Utama
-
-- ✅ Menambahkan makanan dengan jumlah porsi dan kalori per porsi
-- ✅ Total kalori otomatis dihitung
-- ✅ Menyimpan data otomatis dalam file CSV berdasarkan tanggal (`YYYY-MM-DD.csv`)
-- ✅ Riwayat harian multi tanggal
-- ✅ Preset makanan untuk input cepat
-- ✅ Catatan tambahan per makanan
-- ✅ Menghapus data dari tabel
-- ✅ Menampilkan total kalori harian
-- 🚧 Fitur tambahan (dalam pengembangan):
-  - Notifikasi batas kalori
-  - Grafik kalori harian
-   ```
 
 ---
+
+# 🥗 KaloriTracker
+
+Aplikasi desktop sederhana berbasis **Java Swing** untuk mencatat dan memantau kalori harian dari makanan yang dikonsumsi.
+
+---
+
+## 🛠️ Fitur Utama
+
+* ✅ Menambahkan makanan (nama, porsi, kalori per porsi, dan catatan)
+* ✅ Total kalori otomatis dihitung
+* ✅ Penyimpanan data otomatis ke file CSV harian (`YYYY-MM-DD.csv`)
+* ✅ Riwayat kalori harian multi tanggal
+* ✅ Preset makanan untuk input cepat
+* ✅ Catatan tambahan per makanan
+* ✅ Menghapus baris data dari tabel
+* ✅ Menampilkan total kalori harian
+* 🚧 Fitur dalam pengembangan:
+
+  * Notifikasi saat melewati batas kalori
+  * Grafik perkembangan kalori harian
+
+---
+
 ## 📦 Struktur Proyek
 
 ```
@@ -28,7 +31,7 @@ KaloriTracker/
 ├── data/
 │   ├── 2025-04-09.csv
 │   ├── 2025-04-10.csv
-│   └── ... (file data harian)
+│   └── ... (data harian)
 ├── KaloriTracker.java
 └── README.md
 ```
@@ -37,22 +40,26 @@ KaloriTracker/
 
 ## ▶️ Cara Menjalankan
 
-1. **Pastikan sudah install Java JDK** (minimal Java 8)
-2. Compile file Java:
+1. Pastikan sudah menginstal **Java JDK** (minimal versi 8)
+2. Kompilasi file Java:
+
    ```bash
    javac KaloriTracker.java
    ```
 3. Jalankan aplikasi:
+
    ```bash
    java KaloriTracker
    ```
+
 ---
 
-## 📁 Data Tersimpan
+## 📁 Format Data CSV
 
-- Data makanan disimpan secara otomatis dalam folder `data/`
-- Format file: `YYYY-MM-DD.csv`
-- Format isi CSV:
+* Disimpan otomatis di folder `data/`
+* Format file: `YYYY-MM-DD.csv`
+* Format isi:
+
   ```
   Nama,Porsi,Kalori,TotalKalori,HariIniCatatan
   Nasi,1,200,200,Makan siang
@@ -60,149 +67,108 @@ KaloriTracker/
 
 ---
 
-## 🧪 Contoh Preset Makanan
+## 🧪 Preset Makanan
 
 Preset bisa disesuaikan di kode Java:
+
 ```java
-new String[]{"", "Nasi - 200", "Ayam - 250", "Teh Manis - 100"}
+new String[]{"", "Nasi - 200", "Ayam - 250", "Teh Manis - 100"};
 ```
 
 ---
 
-## ✏️ Catatan Penggunaan
+## ✏️ Panduan Penggunaan
 
-- Pilih tanggal dari dropdown untuk melihat data sebelumnya
-- Tambah makanan → otomatis tersimpan
-- Preset akan mengisi otomatis nama & kalori (porsi default 1)
-- Hapus untuk menghapus baris makanan dari tabel
-- Total kalori langsung diperbarui
+* Pilih tanggal dari dropdown untuk melihat data sebelumnya
+* Input makanan → otomatis tersimpan ke file CSV
+* Preset mengisi otomatis nama & kalori (porsi default = 1)
+* Tombol *Hapus* menghapus baris makanan dari tabel
+* Total kalori diperbarui secara otomatis
 
 ---
 
-## ScreenShot
+## 🖼️ Screenshot
 
-![Screenshot 2025-04-09 094705](https://github.com/user-attachments/assets/72c8af3c-f925-40f8-8f72-647a832734a9)
+![Screenshot](https://github.com/user-attachments/assets/72c8af3c-f925-40f8-8f72-647a832734a9)
 
 ---
 
 ## 🧱 Arsitektur Sistem
 
-✅ Interface (Layanan yang Disediakan)
+### ✅ Interface (Layanan Disediakan)
 
-IDataSaver
-Menyediakan layanan untuk menyimpan dan memuat data makanan ke/dari file (CSV).
+| Interface         | Fungsi                                                |
+| ----------------- | ----------------------------------------------------- |
+| `IDataSaver`      | Menyimpan dan memuat data makanan ke/dari file CSV    |
+| `ITableManager`   | Mengakses/mengatur isi tabel dari luar komponen tabel |
+| `IPresetProvider` | Mengambil daftar preset makanan                       |
+| `ITableUpdater`   | Memperbarui tampilan tabel kalori                     |
 
-ITableManager	
-Menyediakan layanan untuk mengakses atau mengatur isi tabel dari luar komponen tabel (misalnya menampilkan data awal atau memanipulasi data dari luar TablePanel).
+### 🧩 Kelas dan Komponennya
 
-IPresetProvider
-Menyediakan layanan untuk mengambil daftar preset makanan (misalnya nasi, ayam, teh).
-
-ITableUpdater 
-Menyediakan layanan untuk memperbarui tabel tampilan kalori.
-
-🧩 Kelas (Pengguna dan Penyedia Layanan)
-
-KaloriTracker
-
-Komponen utama (JFrame)
-
-🔁 Memerlukan:
-
-IDataSaver → untuk menyimpan/memuat data makanan
-
-IPresetProvider → untuk mendapatkan daftar preset makanan
-
-ITableManager → untuk mengatur data tabel dari luar komponen
-
-ITableUpdater → (opsional, jika langsung memperbarui tampilan tabel)
-
-InputPanel
-
-Panel untuk input makanan dari pengguna
-
-🔁 Memerlukan:
-
-IPresetProvider → untuk menampilkan pilihan makanan preset
-
-ITableUpdater → untuk memperbarui tabel setelah input makanan
-
-TablePanel
-
-Menampilkan tabel data makanan & kalori
- 
-✅ Menyediakan:
- 
-ITableUpdater → menyediakan layanan update tampilan
-
-ITableManager → menyediakan layanan untuk mengatur/memanipulasi tabel dari luar
-
-FileService
-
-✅ Mengimplementasikan:
- 
-IDataSaver → menyimpan dan memuat data dari/ke file CSV
-
-PresetService
-
-✅ Mengimplementasikan:
-
-IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
+| Kelas           | Peran                             | Menggunakan / Menyediakan Interface                         |
+| --------------- | --------------------------------- | ----------------------------------------------------------- |
+| `KaloriTracker` | JFrame utama aplikasi             | Memerlukan `IDataSaver`, `IPresetProvider`, `ITableManager` |
+| `InputPanel`    | Panel input makanan pengguna      | Memerlukan `IPresetProvider`, `ITableUpdater`               |
+| `TablePanel`    | Menampilkan tabel makanan         | Menyediakan `ITableUpdater`, `ITableManager`                |
+| `FileService`   | Menyimpan/memuat data ke file     | Mengimplementasikan `IDataSaver`                            |
+| `PresetService` | Menyediakan daftar preset makanan | Mengimplementasikan `IPresetProvider`                       |
 
 ---
 
-## 🛗 Provide dan Require Interface 
+## 🔌 Provide & Require Interface Diagram
 
-![image](https://github.com/user-attachments/assets/928d9e78-dd75-49ab-8202-8a045ad10a53)
-
----
-
-## 📃 UML Class Diagram
-
-![image](https://github.com/user-attachments/assets/1bbb4018-7693-4892-afef-571f9ca5e6ec)
+![Provide Require Interface](https://github.com/user-attachments/assets/928d9e78-dd75-49ab-8202-8a045ad10a53)
 
 ---
 
-##  WORKFLOW
+## 📐 UML Class Diagram
 
-# 01. Component Identification
-USE CASE DIAGRAM
-
-USE CASE DESCRIPTIONS
-
-System interface
-
-Business concept model
-
-Business type model
-
-Business interfaces
-
-Component architecture
-
-# 02. Component Interaction
-
-Component interaction diagram
-
-# 03. Component Specification
-
-Interface spesification & OCL
+![UML Diagram](https://github.com/user-attachments/assets/1bbb4018-7693-4892-afef-571f9ca5e6ec)
 
 ---
 
-## 🧑‍💻 Author
+## 🔁 Workflow Pengembangan
 
-- Nama: [Farah Nasywa & Siska Auliani]
-- Tugas: UTS Java Components 2025
+### 01. Component Identification
+
+* Use Case Diagram
+* Use Case Descriptions
+* System Interface
+* Business Concept Model
+* Business Type Model
+* Business Interfaces
+* Component Architecture
+
+### 02. Component Interaction
+
+* Component Interaction Diagram
+
+### 03. Component Specification
+
+* Interface Specification & OCL
 
 ---
 
-## 📃 Lisensi
+## 👩‍💻 Pengembang
 
-MIT License. Bebas digunakan untuk tugas, pengembangan pribadi, dan belajar.
+* **Farah Nasywa** 2208107010051
+* **Siska Auliani** 2208107010065
+
+📚 Tugas: UTS Java Components 2025
 
 ---
 
-## 📃 Presentasi
+## 📄 Lisensi
 
-https://www.canva.com/design/DAGkIYbqhSg/YclBqyjxIxn3rxpzZcX6gA/edit?utm_content=DAGkIYbqhSg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+**MIT License**
+Bebas digunakan untuk keperluan tugas, pengembangan pribadi, dan pembelajaran.
+
+---
+
+## 🖥️ Presentasi Proyek
+
+[Slide](https://www.canva.com/design/DAGkIYbqhSg/YclBqyjxIxn3rxpzZcX6gA/edit?utm_content=DAGkIYbqhSg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+---
+
