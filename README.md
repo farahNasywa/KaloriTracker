@@ -159,8 +159,24 @@ IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
 
 ## 📃 UML Class Diagram
 
-![joki-class diagram drawio](https://github.com/user-attachments/assets/1bbb4018-7693-4892-afef-571f9ca5e6ec)
+![image](https://github.com/user-attachments/assets/1bbb4018-7693-4892-afef-571f9ca5e6ec)
 
+---
+
+##  WORKFLOW
+
+01. Component Identification
+USE CASE DIAGRAM
+USE CASE DESCRIPTIONS
+System interface
+Business concept model
+Business type model
+Business interfaces
+Component architecture
+3. Component Interaction
+Component interaction diagram
+4. Component Specification
+Interface spesification & OCL
 ---
 
 ## 🧑‍💻 Author
@@ -173,3 +189,9 @@ IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
 ## 📃 Lisensi
 
 MIT License. Bebas digunakan untuk tugas, pengembangan pribadi, dan belajar.
+
+---
+
+## 📃 Presentasi
+
+https://www.canva.com/design/DAGkIYbqhSg/YclBqyjxIxn3rxpzZcX6gA/edit?utm_content=DAGkIYbqhSg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
