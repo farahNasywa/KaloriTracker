@@ -21,13 +21,6 @@ Aplikasi desktop sederhana berbasis Java Swing untuk mencatat dan memantau kalor
    ```
 
 ---
-##   Presentasi
-
-```
-
-https://www.canva.com/design/DAGkIYbqhSg/YclBqyjxIxn3rxpzZcX6gA/edit?utm_content=DAGkIYbqhSg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
-
----
 ## 📦 Struktur Proyek
 
 ```
