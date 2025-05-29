@@ -165,18 +165,29 @@ IPresetProvider → menyediakan daftar makanan preset yang bisa dipilih
 
 ##  WORKFLOW
 
-01. Component Identification
+# 01. Component Identification
 USE CASE DIAGRAM
+
 USE CASE DESCRIPTIONS
+
 System interface
+
 Business concept model
+
 Business type model
+
 Business interfaces
+
 Component architecture
-3. Component Interaction
+
+# 02. Component Interaction
+
 Component interaction diagram
-4. Component Specification
+
+# 03. Component Specification
+
 Interface spesification & OCL
+
 ---
 
 ## 🧑‍💻 Author
