@@ -15,12 +15,17 @@ Aplikasi desktop sederhana berbasis Java Swing untuk mencatat dan memantau kalor
 - ✅ Catatan tambahan per makanan
 - ✅ Menghapus data dari tabel
 - ✅ Menampilkan total kalori harian
-- ✅ (Segera) Fitur edit data makanan
-- 🚧 Fitur tambahan (opsional, dalam pengembangan):
+- 🚧 Fitur tambahan (dalam pengembangan):
   - Notifikasi batas kalori
-  - Login user sederhana
   - Grafik kalori harian
    ```
+
+---
+##   Presentasi
+
+```
+
+https://www.canva.com/design/DAGkIYbqhSg/YclBqyjxIxn3rxpzZcX6gA/edit?utm_content=DAGkIYbqhSg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ---
 ## 📦 Struktur Proyek
