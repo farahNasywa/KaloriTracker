@@ -1,6 +1,3 @@
-
----
-
 # 🥗 KaloriTracker
 
 Aplikasi desktop sederhana berbasis **Java Swing** untuk mencatat dan memantau kalori harian dari makanan yang dikonsumsi.
