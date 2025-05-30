@@ -14,10 +14,6 @@ Aplikasi desktop sederhana berbasis **Java Swing** untuk mencatat dan memantau k
 * ✅ Catatan tambahan per makanan
 * ✅ Menghapus baris data dari tabel
 * ✅ Menampilkan total kalori harian
-* 🚧 Fitur dalam pengembangan:
-
-  * Notifikasi saat melewati batas kalori
-  * Grafik perkembangan kalori harian
 
 ---
 
@@ -166,6 +162,7 @@ Bebas digunakan untuk keperluan tugas, pengembangan pribadi, dan pembelajaran.
 ## 🖥️ Presentasi Proyek
 
 [Slide](https://www.canva.com/design/DAGkIYbqhSg/YclBqyjxIxn3rxpzZcX6gA/edit?utm_content=DAGkIYbqhSg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Slide](https://youtu.be/7En6TazwDpk)
 
 ---
 
