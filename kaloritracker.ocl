@@ -1,0 +1,49 @@
+context IUserKalori
+inv InterfaceDefined: true
+
+context IUserKalori::inputMakanan(nama: String, porsi: Integer, kaloriPerPorsi: Integer): Boolean
+pre: not nama.oclIsUndefined() and nama.size() > 0
+     and porsi > 0
+     and kaloriPerPorsi > 0
+post: result = true
+
+context IUserKalori::lihatTotalKalori(tanggal: String): Integer
+pre: not tanggal.oclIsUndefined() and tanggal.size() > 0
+post: result >= 0
+
+context IUserKalori::simpanData(tanggal: String): Boolean
+pre: not tanggal.oclIsUndefined() and tanggal.size() > 0
+post: result = true
+
+context IUserKalori::muatData(tanggal: String): Set(Makanan)
+pre: not tanggal.oclIsUndefined() and tanggal.size() > 0
+post: result->forAll(m | not m.nama.oclIsUndefined() and m.porsi >= 0 and m.kaloriPerPorsi >= 0)
+
+context Pengguna
+inv NamaTidakKosong: not self.nama.oclIsUndefined() and self.nama.size() > 0
+inv PorsiPositif: self.porsi >= 0
+inv KaloriPerPorsiPositif: self.kaloriPerPorsi >= 0
+
+context Pengguna::inputMakanan(nama: String, porsi: Integer, kaloriPerPorsi: Integer): Boolean
+pre: not nama.oclIsUndefined() and nama.size() > 0
+     and porsi > 0
+     and kaloriPerPorsi > 0
+post: self.muatData('hariIni')->exists(m | m.nama = nama and m.porsi = porsi and m.kaloriPerPorsi = kaloriPerPorsi)
+
+context Pengguna::lihatTotalKalori(tanggal: String): Integer
+pre: not tanggal.oclIsUndefined() and tanggal.size() > 0
+post: result = self.muatData(tanggal)->collect(m | m.porsi * m.kaloriPerPorsi)->sum()
+
+context Pengguna::simpanData(tanggal: String): Boolean
+pre: not tanggal.oclIsUndefined() and tanggal.size() > 0
+post: result = true
+
+context Pengguna::muatData(tanggal: String): Set(Makanan)
+pre: not tanggal.oclIsUndefined() and tanggal.size() > 0
+post: result->forAll(m | not m.nama.oclIsUndefined() and m.porsi >= 0 and m.kaloriPerPorsi >= 0)
+
+context Pengguna
+inv SemuaMakananValid: self.muatData('any')->forAll(m | m.porsi >= 0 and m.kaloriPerPorsi >= 0)
+inv NamaTidakKosong: not self.nama.oclIsUndefined() and self.nama.size() > 0
+inv PorsiValid: self.porsi >= 0
+inv KaloriValid: self.kaloriPerPorsi >= 0
